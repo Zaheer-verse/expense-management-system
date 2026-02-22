@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings | Smart Student Expense Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <aside class="sidebar glass">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SE</span>
+      <div>
+        <h1>Smart Expense</h1>
+        <p>Student Tracker</p>
+      </div>
+    </a>
+    <nav>
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="add-expense.html">Add Expense</a>
+      <a class="nav-link" href="analytics.html">Analytics</a>
+      <a class="nav-link" href="goals.html">Saving Goals</a>
+      <a class="nav-link active" href="settings.html">Settings</a>
+    </nav>
+    <button id="themeToggle" class="btn secondary full">Toggle Theme</button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h2>Preferences</h2>
+        <p>Control monthly budget and app behavior.</p>
+      </div>
+      <div class="topbar-image">
+        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=900&q=80" alt="Student using app" />
+      </div>
+    </header>
+
+    <section class="grid-two reveal">
+      <article class="card glass">
+        <h3>Monthly Budget</h3>
+        <form id="budgetForm" class="form">
+          <label>
+            Budget Amount (PKR)
+            <input type="number" name="budget" min="1" step="1" required />
+          </label>
+          <button class="btn" type="submit">Save Budget</button>
+        </form>
+        <p class="helper" id="budgetNote">Current budget: PKR 0.00</p>
+      </article>
+
+      <article class="card glass">
+        <h3>Smart Tips</h3>
+        <ul class="list clean tips">
+          <li>Pack lunch 3 times/week to reduce food cost.</li>
+          <li>Use student pass for transport savings.</li>
+          <li>Set auto-save each week into your goal.</li>
+          <li>Review analytics every Sunday.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
