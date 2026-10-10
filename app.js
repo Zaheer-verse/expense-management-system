@@ -64,12 +64,23 @@ function initTheme() {
   });
 }
 
+function escapeHtml(value) {
+  const entities = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  };
+  return String(value ?? "").replace(/[&<>"']/g, (character) => entities[character]);
+}
+
 function createExpenseListItem(expense, index, includeDelete = true) {
   const li = document.createElement("li");
   li.innerHTML = `
     <div>
-      <strong>${expense.title}</strong>
-      <div class="meta">${expense.category} - ${expense.date}</div>
+      <strong>${escapeHtml(expense.title)}</strong>
+      <div class="meta">${escapeHtml(expense.category)} - ${escapeHtml(expense.date)}</div>
     </div>
     <div>
       <strong>${money(expense.amount)}</strong>
@@ -345,7 +356,7 @@ function renderGoals() {
 
       wrap.innerHTML = `
         <div class="card-head">
-          <strong>${g.name}</strong>
+          <strong>${escapeHtml(g.name)}</strong>
           <button class="btn small danger" data-remove-goal="${index}">Delete</button>
         </div>
         <div class="meta">${money(g.saved)} / ${money(g.target)}</div>
