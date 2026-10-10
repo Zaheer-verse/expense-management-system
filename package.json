@@ -1,0 +1,14 @@
+{
+  "name": "expense-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/security-browser.test.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}
